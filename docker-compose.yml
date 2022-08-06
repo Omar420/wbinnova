@@ -1,0 +1,21 @@
+version: '3.1'
+networks:
+  backend:
+    name: back-network
+services:
+  mongo:
+    image: mongo
+    restart: always
+    networks:
+      - backend
+      
+  WBINNOVA_API:
+    image: wbinnova-api
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - backend
+    environment:
+      MONGO_URI:  mongodb://mongo:27017/
+      PORT: 8081

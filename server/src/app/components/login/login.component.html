@@ -1,0 +1,29 @@
+<div class="card">
+    <span class="text-center">Ingresar</span>
+</div>
+
+<div class="bodyy">
+
+    <div *ngIf="loading">
+        <mat-spinner class="spiner" diameter="50"></mat-spinner>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input matInput autocomplete="off" placeholder="Usuario" formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Pasword</mat-label>
+            <input matInput autocomplete="off" placeholder="Contraseña" formControlName="password" type="password">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
+        
+
+    </form>
+    <button *ngIf="!loading" mat-raised-button color="primary" (click)="register()">Registrar</button>
+</div>
+
+
+    

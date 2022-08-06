@@ -1,0 +1,10 @@
+.bodyy {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+
+  .spiner {
+    margin: 0 auto;
+  }

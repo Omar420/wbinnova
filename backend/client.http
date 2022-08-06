@@ -1,0 +1,11 @@
+POST  http://localhost:8081/shoes/ HTTP/1.1
+content-type: application/json
+
+{
+    "images":["uritest 2"],
+    "brand":"brand test 2",
+    "model":"model test 2",
+    "price":25,
+    "currency":"eur",
+    "stores":["ebay","wish"]
+}

@@ -1,0 +1,70 @@
+const { Shoes } = require('../models')
+
+const create = async (req, res) => {
+    try {
+        const shoes = await Shoes.create(req.body)
+        res.json(shoes)
+    } catch (error) {
+        res.status(400).json({
+            error: error.message
+        })
+    }
+}
+
+const getAll = async (req, res) => {
+    try {
+        const data = await Shoes.find()
+        res.json(data)
+    } catch (error) {
+        res.status(400).json({
+            error: error.message
+        })
+    }
+}
+
+const getById = async (req, res) => {
+    try {
+        const id = req.params.id
+        const data = await Shoes.findById(id)
+        if(!data) throw new Error('Item not found')
+        res.json(data)
+    } catch (error) {
+        res.status(400).json({
+            error: error.message
+        })
+    }
+}
+
+const update = async (req, res) => {
+    try {
+        const id = req.params.id
+        const data = await Shoes.findByIdAndUpdate(id,req.body)
+        if(!data) throw new Error('Item not found')
+        res.json(data)
+    } catch (error) {
+        res.status(400).json({
+            error: error.message
+        })
+    }
+}
+
+const remove = async (req, res) => {
+    try {
+        const id = req.params.id
+        const data = await Shoes.findByIdAndRemove(id)
+        if(!data) throw new Error('Item not found')
+        res.json(data)
+    } catch (error) {
+        res.status(400).json({
+            error: error.message
+        })
+    }
+}
+
+module.exports = {
+    create,
+    getAll,
+    getById,
+    update,
+    remove
+}

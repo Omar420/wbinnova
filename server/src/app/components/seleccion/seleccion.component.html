@@ -1,0 +1,10 @@
+<div class="bodyy">
+    <div *ngIf="loading">
+        <mat-spinner class="spiner" diameter="50"></mat-spinner>
+    </div>
+        <div *ngIf="!loading">
+            <button (click)="fakeLoading()" mat-raised-button matTooltip="Basic" >Basic</button>
+        </div>
+
+
+</div>
