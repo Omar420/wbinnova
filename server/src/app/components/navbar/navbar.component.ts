@@ -15,6 +15,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscar(){
+    this.router.navigate(['buscar'])
+    
+  }
+
   login(){
     this.router.navigate(['login'])
   }

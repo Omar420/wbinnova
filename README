@@ -1,0 +1,19 @@
+para correr el sistema:
+
+1. instalar correctamente docker
+https://www.docker.com/
+
+asegure de instalar correctamente
+
+2. instalar git
+https://git-scm.com/
+
+3. correr el backend
+en una terminal de "Git Bash" y escribir:
+"sh run.sh"
+
+4. correr el frontend
+en una terminal normal asegurese de estar en la carpeta "server" y escribir:
+"ng serve"
+
+Espero sea de su agrado!. aunque tuvo detalles 

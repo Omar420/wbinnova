@@ -11,14 +11,14 @@ export class BuscarService {
   constructor(private http: HttpClient) { }
 
   buscarZapatos() {
-    return this.http.get(`${this.API_URI}/shoes`)
+    return this.http.get(`${this.API_URI}/shoes`) 
   }
 
   buscarZapatosId(id: string) {
     return this.http.get(`${this.API_URI}/shoes/${id}`)
   }
 
-  aggZapatosId(data: any) {
+  aggZapatos(data: any) {
     return this.http.post(`${this.API_URI}/shoes`, data)
   }
 

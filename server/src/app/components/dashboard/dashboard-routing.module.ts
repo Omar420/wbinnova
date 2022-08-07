@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BuscarZapatosComponent } from '../buscar-zapatos/buscar-zapatos.component';
-import { DashboardComponent } from './dashboard.component';
+import { PanelAdminComponent } from '../dashboard/panel-admin/panel-admin.component';
+import { CrearComponent } from './crear/crear.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent, children: [
-    {path: 'buscar', component: BuscarZapatosComponent}
-  ]}
+  {path: '', component: PanelAdminComponent, children: [
+    {path: 'crear', component: CrearComponent},
+    {path: 'admin', component: PanelAdminComponent},
+  ]},
+
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -1,0 +1,28 @@
+.alaing-derecha {
+    text-align: right;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.ancho {
+    width: 80%;
+}
+
+
+.file-select-button, .file-name {
+    display: inline-block;
+    margin: 8px;
+  }
+
+.file-input {
+    display: none;
+}

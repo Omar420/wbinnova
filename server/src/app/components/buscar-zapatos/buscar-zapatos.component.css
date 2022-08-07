@@ -34,3 +34,7 @@ td, th {
 .center-all {
   content: center;
 }
+
+.alaing-derecha {
+  text-align: right;
+}

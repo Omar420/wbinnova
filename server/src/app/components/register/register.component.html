@@ -1,20 +1,37 @@
-<div class="card">
-    <span class="text-center">REGISTRAR</span>
-</div>
-<div class="bodyy">
-    <form [formGroup]="form" (ngSubmit)="registrar()">
 
-        <mat-form-field class="ancho" appearance="fill">
-            <mat-label>Usuario</mat-label>
-            <input matInput autocomplete="off" placeholder="Usuario" formControlName="username">
-        </mat-form-field>
-        <mat-form-field class="ancho" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput autocomplete="off" placeholder="Contraseña" formControlName="password" type="password">
-        </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" class="ancho" [disabled]="form.invalid">Registrar</button>
+<div class="body">
+    <div class="login">
+        <div *ngIf="!loading">
+            <img src="../../../assets/img/add-user.png" width="50%">
+            <h1 class="text-center">REGISTRAR</h1>
+        </div>
+        
+        <div *ngIf="loading">
+            <mat-spinner class="spiner" diameter="50"></mat-spinner>
+        </div>
+    
+        
+    
+        <form [formGroup]="form" (ngSubmit)="register()" *ngIf="!loading">
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput autocomplete="off" placeholder="Usuario" formControlName="username">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput autocomplete="off" placeholder="Contraseña" formControlName="password" type="password">
+            </mat-form-field>
+            <div>
+                <button class="button-r-2" type="submit" mat-raised-button color="primary" [disabled]="form.invalid" matTooltip="Registrar">Registrar</button>
 
-    </form>
+                <button class="button-l-2" *ngIf="!loading" mat-raised-button color="primary" (click)="volver()" matTooltip="Volver">Volver</button>
+
+            </div>
+    
+        </form>
+    </div>
+   
 </div>
             
     

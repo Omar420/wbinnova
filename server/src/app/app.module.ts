@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +9,6 @@ import { SharedModule } from './components/shared/shared.module';
 
 
 // Components
-import { SeleccionComponent } from './components/seleccion/seleccion.component';
 import { BuscarZapatosComponent } from './components/buscar-zapatos/buscar-zapatos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,7 +25,6 @@ import { LoginService } from './services/login.service';
 @NgModule({
   declarations: [
     AppComponent,
-    SeleccionComponent,
     BuscarZapatosComponent,
     NavbarComponent,
     LoginComponent,
@@ -39,8 +35,6 @@ import { LoginService } from './services/login.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule,
-    ReactiveFormsModule
 
   ],
   providers: [

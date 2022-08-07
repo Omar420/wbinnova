@@ -1,0 +1,24 @@
+.body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+  
+.login {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.button-l-2 {
+    margin-left: 2%;
+}
+
+.button-r-2 {
+    margin-right: 2%;
+}
+
+.spiner {
+    margin: 0 auto;
+}

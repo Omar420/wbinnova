@@ -1,28 +1,42 @@
-<div class="card">
-    <span class="text-center">Ingresar</span>
-</div>
+<div class="body">
+    <div class="login">
+        
+        
+        <img *ngIf="!loading" src="../../../assets/img/user.png" width="50%">
 
-<div class="bodyy">
+        <h1 class="text-center">Ingresar</h1>
 
-    <div *ngIf="loading">
-        <mat-spinner class="spiner" diameter="50"></mat-spinner>
+        <div *ngIf="loading">
+            <mat-spinner class="spiner" diameter="50"></mat-spinner>
+        </div>
+    
+        <form [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading">
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput autocomplete="off" placeholder="Usuario" formControlName="username">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" style="width: 50%;">
+                <mat-label>Contraseña</mat-label>
+                <input matInput autocomplete="off" placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password">
+                <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </a>
+            </mat-form-field>
+
+            <div>
+                <button class="button-r-2" type="submit" mat-raised-button color="primary" [disabled]="form.invalid" matTooltip="Ingresar">Ingresar</button>
+            
+                <button class="button-l-2" *ngIf="!loading" mat-raised-button color="primary" (click)="register()" matTooltip="Registrar">Registrar</button>
+            </div>
+            
+    
+        </form>
     </div>
 
-    <form [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading">
 
-        <mat-form-field appearance="fill">
-            <mat-label>Usuario</mat-label>
-            <input matInput autocomplete="off" placeholder="Usuario" formControlName="username">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Pasword</mat-label>
-            <input matInput autocomplete="off" placeholder="Contraseña" formControlName="password" type="password">
-        </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
-        
-
-    </form>
-    <button *ngIf="!loading" mat-raised-button color="primary" (click)="register()">Registrar</button>
+    
 </div>
 
 

@@ -1,0 +1,112 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="alaing-derecha">
+        <button (click)="home()" mat-icon-button class="example-icon favorite-icon alaing-derecha" aria-label="Example icon-button with heart icon" matTooltip="Loguear">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+        <div class="align-items-center">
+            <div class="card bodyy mat-elevation-z8">
+                <div class="card-body">
+                    <div class="text-center">
+                        <span class="titulo">Agregar Zapatos</span>
+                    </div>
+                    <div class="alaing-derecha">
+                        <button (click)="routerVolver()" type="submit" class="cente" mat-raised-button color="primary" matTooltip="Volver">
+                            <mat-icon>arrow_back</mat-icon>
+                        </button>
+                    </div>
+                        
+                        
+                    
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <form [formGroup]="form" (ngSubmit)="register()">
+            <mat-card style="margin-top: 15px;">
+                <mat-grid-list cols="4" rowHeight="65px">
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+                        <mat-form-field class="ancho text-center" hintLabel="Max 25 Caracteres" appearance="fill">
+                            <mat-label>Marca</mat-label>
+                            <input formControlName="brand" matInput #brand maxlength="25" placeholder="Nike, Puma...">
+                            <mat-hint align="end">{{brand.value?.length || 0}}/25</mat-hint>
+                        </mat-form-field>
+
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile [colspan]="2" [rowspan]="5">
+            
+                        <div style="text-align: center; margin-top: 5%;">
+                                <input formControlName="images" class="btn btn-primary" (change)="onPhotoSelected($event)" type="file" #photoImput style="width: 100% !important;">
+                            <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No image" width="30%">
+                            
+                        </div>
+
+
+
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                        
+                        <mat-form-field class="ancho text-center" hintLabel="Max 25 Caracteres" appearance="fill">
+                            <mat-label>Modelo</mat-label>
+                            <input formControlName="model" matInput #model maxlength="25" placeholder="Air for 1, Jordan...">
+                            <mat-hint align="end">{{model.value?.length || 0}}/25</mat-hint>
+                        </mat-form-field>
+
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+                        <mat-form-field class="ancho text-center" hintLabel="Max 25 Caracteres" appearance="fill">
+                            <mat-label>Moneda</mat-label>
+                            <input formControlName="currency" matInput #currency maxlength="25" placeholder="USD, EUR, COP, SOL...">
+                            <mat-hint align="end">{{currency.value?.length || 0}}/25</mat-hint>
+                        </mat-form-field>
+
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+                        <mat-form-field class="ancho text-center" hintLabel="Max 25 Caracteres" appearance="fill">
+                            <mat-label>precio</mat-label>
+                            <input formControlName="price" matInput #price maxlength="25" placeholder="100, 200, 300...">
+                            <mat-hint align="end">{{price.value?.length || 0}}/25</mat-hint>
+                        </mat-form-field>
+
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+                        <mat-form-field class="ancho text-center" hintLabel="Max 25 Caracteres" appearance="fill">
+                            <mat-label>Store</mat-label>
+                            <input formControlName="stores" matInput #stores maxlength="25" placeholder="Amazon, Ebay, Alibaba...">
+                            <mat-hint align="end">{{stores.value?.length || 0}}/25</mat-hint>
+                        </mat-form-field>
+
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="4" [rowspan]="1">
+
+                        <button class="button-r-2" type="submit" mat-raised-button color="primary" [disabled]="form.invalid" matTooltip="Registrar">Registrar</button>
+
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </mat-card>
+        </form>
+        
+
+    </div>
+</div>

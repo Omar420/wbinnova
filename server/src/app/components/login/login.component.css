@@ -1,49 +1,37 @@
-.ancho {
-    width: 80%;
+.body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
 }
 
-.centro {
-    width: 300px;
-    margin: 0 center;
+.login {
+   width: 100%;
+   max-width: 400px;
+   text-align: center;
 }
 
-.bodyy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.button-l-2 {
+  margin-left: 2%;
+}
 
-  .bodyy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.button-r-2 {
+  margin-right: 2%;
+}
+
+.spiner {
+  margin: 0 auto;
+}
   
-  table {
-    width: 100%;
-  }
-    
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-    
-  td, th {
-    width: 25%;
-  }
-  
-  
-  .example-card {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  .center-all {
-    content: center;
-  }
-  
+
+
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+

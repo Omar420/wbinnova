@@ -13,8 +13,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup
   loading = false
-  usuarioss: any
-  paswordss: any
+  hide = true
 
   constructor(
     private fb: FormBuilder,
@@ -52,7 +51,6 @@ export class LoginComponent implements OnInit {
   }
 
   fakeLoading() {
-    console.log("entro");
     this.loading = true;
 
     
@@ -63,12 +61,12 @@ export class LoginComponent implements OnInit {
   }
 
   register(){
-    console.log('entro')
+    
     this.router.navigate(['register'])
   }
 
   errorr() {
-    this._snackBar.open('Usuario o Contraseña son invalidos', '', {
+    this._snackBar.open('Usuario o Contraseña son Invalidos', '', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
