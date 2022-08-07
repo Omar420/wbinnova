@@ -9,7 +9,7 @@ module.exports = () => {
     router.get("/", ShoesController.getAll)
     router.get("/:id", ShoesController.getById)
     router.post("/",multerMiddleware, ShoesController.create)
-    router.put("/:id", ShoesController.update)
+    router.put("/:id",multerMiddleware, ShoesController.update)
     router.delete("/:id", ShoesController.remove)
 
     return router

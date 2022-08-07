@@ -39,10 +39,14 @@ const getById = async (req, res) => {
     }
 }
 
-const update = async (req, res) => {
+const update = async ({ body, files = [], protocol,params, headers: { host } }, res) => {
     try {
-        const id = req.params.id
-        const data = await Shoes.findByIdAndUpdate(id, req.body)
+        const id = params.id
+        const newData = {
+            ...body,
+            images: files.map(({ path }) => `${protocol}://${host}/${path}`)
+        }
+        const data = await Shoes.findByIdAndUpdate(id,newData)
         if (!data) throw new Error('Item not found')
         res.json(data)
     } catch (error) {
