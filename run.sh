@@ -1,6 +1,6 @@
-docker system prune
+docker system prune -f 
 
-docker image prune
+docker image prune - f
 
 cd backend 
 
