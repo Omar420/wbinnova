@@ -1,8 +1,12 @@
 const { Shoes } = require('../models')
 
-const create = async (req, res) => {
+const create = async ({ body, files = [], protocol, headers: { host } }, res) => {
     try {
-        const shoes = await Shoes.create(req.body)
+        const data = {
+            ...body,
+            images: files.map(({ path }) => `${protocol}://${host}/${path}`)
+        }
+        const shoes = await Shoes.create(data)
         res.json(shoes)
     } catch (error) {
         res.status(400).json({
@@ -26,7 +30,7 @@ const getById = async (req, res) => {
     try {
         const id = req.params.id
         const data = await Shoes.findById(id)
-        if(!data) throw new Error('Item not found')
+        if (!data) throw new Error('Item not found')
         res.json(data)
     } catch (error) {
         res.status(400).json({
@@ -38,8 +42,8 @@ const getById = async (req, res) => {
 const update = async (req, res) => {
     try {
         const id = req.params.id
-        const data = await Shoes.findByIdAndUpdate(id,req.body)
-        if(!data) throw new Error('Item not found')
+        const data = await Shoes.findByIdAndUpdate(id, req.body)
+        if (!data) throw new Error('Item not found')
         res.json(data)
     } catch (error) {
         res.status(400).json({
@@ -52,7 +56,7 @@ const remove = async (req, res) => {
     try {
         const id = req.params.id
         const data = await Shoes.findByIdAndRemove(id)
-        if(!data) throw new Error('Item not found')
+        if (!data) throw new Error('Item not found')
         res.json(data)
     } catch (error) {
         res.status(400).json({
